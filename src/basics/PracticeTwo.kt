@@ -1,8 +1,7 @@
-package practice
+package basics
 
-import practice.Color.*
-import java.time.Year
-import javax.print.attribute.standard.PrinterName
+import basics.Color.*
+
 
 fun main(args: Array<String>) {
     //Lets print the class name using a function from another class, classic function imports
@@ -67,12 +66,12 @@ fun colorMixerOptimized(c1: Color, c2: Color) =
 // Now lets try the iteration in Kotlin
 //for loop is for <item> in <elements>
 fun fizBuzz(i : Int) =
-    when {
-        i% 15 == 0 -> "FizzBuzz"
-        i% 3 == 0 -> "Fizz"
-        i% 5 == 0 -> "Buzz"
-        else -> "$i"
-    }
+        when {
+            i% 15 == 0 -> "FizzBuzz"
+            i% 3 == 0 -> "Fizz"
+            i% 5 == 0 -> "Buzz"
+            else -> "$i"
+        }
 
 
 enum class Color(val r: Int, val g: Int, val b: Int) {

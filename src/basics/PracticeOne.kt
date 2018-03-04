@@ -1,6 +1,6 @@
-package practice
+package basics
 
-import practice.Color.*
+import basics.Color.*
 
 fun main(arg: Array<String>) {
     // Some daily handy Kotlin snippets
@@ -24,19 +24,20 @@ fun iWillPrintSomethingAwesome( yourCurrentClassName: String ){
 }
 
 fun getWarmth(color : Color) =
-    when(color){
-        RED, BLACK -> "warmth and Dark"
-        GREEN -> "Neutral"
-        BLUE, WHITE -> "Cold"
-    }
+        when(color){
+            RED, BLACK -> "warmth and Dark"
+            GREEN -> "Neutral"
+            BLUE, WHITE -> "Cold"
+        }
 
 
 class StringOrNah(private val yourString : Any) {
     val isString : Boolean
-    get() {
-        return yourString is String
-    }
+        get() {
+            return yourString is String
+        }
 
 
 }
+
 

@@ -5,6 +5,8 @@ import basics.Color.*
 
 fun main(args: Array<String>) {
     //Lets print the class name using a function from another class, classic function imports
+
+    //hey! you remember the enum class we created in PracticeOne.kt?  try it out here. C'mon get creative!
     iWillPrintSomethingAwesome("PracticesTwo.kt")
 
     //enums with properties

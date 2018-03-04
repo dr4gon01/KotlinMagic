@@ -14,7 +14,6 @@ fun main(arg: Array<String>) {
     if (something2.isString){
         println("1. Yes your input is a string!")} else println("1. Nope its not!")
 
-    //hey! you remember the enum class we created in PracticeTwo.kt, try it out here. C'mon get creative!
     println("2. ${getWarmth(BLACK)}")
 
 }

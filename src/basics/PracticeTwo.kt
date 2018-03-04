@@ -1,6 +1,7 @@
 package basics
 
 import basics.Color.*
+import java.util.*
 
 
 fun main(args: Array<String>) {
@@ -14,8 +15,8 @@ fun main(args: Array<String>) {
 
     //when keyword usage (perfect answer when my wife asks me what suits her the best ;->))
     println(colorPicker(RED))
-    println(colorPicker(Color.BLUE))
-    println(colorPicker(Color.GREEN))
+    println(colorPicker(BLUE))
+    println(colorPicker(GREEN))
 
     println(colorPickerWithMoreOptions(1))
     println(colorPickerWithMoreOptions(WHITE))
@@ -24,15 +25,20 @@ fun main(args: Array<String>) {
 
     //for iterations : 1..100 is iterating over a progression
     for (i in 1..100){
-        println(fizBuzz(i))
+        println(fizzBuzz(i))
     }
 
     println("---------------------")
 
     //for counting backwards and print only the even numbers do : iterating over a progression with a step
     for (i in 100 downTo 1 step 2){
-        println(fizBuzz(i))
+        println(fizzBuzz(i))
     }
+
+    println("---------------------")
+
+    //for iterators over maps
+    iterationOverMapsExample()
 }
 
 // when can be used like this:
@@ -67,7 +73,7 @@ fun colorMixerOptimized(c1: Color, c2: Color) =
 
 // Now lets try the iteration in Kotlin
 //for loop is for <item> in <elements>
-fun fizBuzz(i : Int) =
+fun fizzBuzz(i : Int) =
         when {
             i% 15 == 0 -> "FizzBuzz"
             i% 3 == 0 -> "Fizz"
@@ -75,8 +81,20 @@ fun fizBuzz(i : Int) =
             else -> "$i"
         }
 
+fun iterationOverMapsExample(){
+    //we wanna use Tree maps so keys are sorted
+    val binaryReps = TreeMap<Char, String>()
 
-enum class Color(val r: Int, val g: Int, val b: Int) {
+    for(letter in 'A'.. 'Z'){
+        val binary = Integer.toBinaryString(letter.toInt())
+        binaryReps[letter] = binary
+    }
+
+    //look at that sweet double variable assignment
+    for ((letter, binary) in binaryReps) println("$letter = $binary")
+}
+
+enum class Color(private val r: Int, private val g: Int, private val b: Int) {
     //this is an enum class with properties
     //observe the only place where we use a semicolon :-> )
     RED(225, 0, 0),

@@ -1,2 +1,7 @@
 # KotlinMagic
-Some useful snippets of Kotlin
+
+Contains :
+
+
+* Kotlin Basics 
+

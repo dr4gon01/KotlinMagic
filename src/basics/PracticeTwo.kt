@@ -90,8 +90,12 @@ fun iterationOverMapsExample(){
         binaryReps[letter] = binary
     }
 
-    //look at that sweet double variable assignment
+    //look at that sweet unpacking
     for ((letter, binary) in binaryReps) println("$letter = $binary")
+
+    //also look at this beauty (using an .withIndex()):
+    val list = arrayListOf("10", "11", "35")
+    for ((index, element) in list.withIndex()) println("$index = $element")
 }
 
 enum class Color(private val r: Int, private val g: Int, private val b: Int) {

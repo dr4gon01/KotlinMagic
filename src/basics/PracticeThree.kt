@@ -14,7 +14,7 @@ fun main(args: Array<String>){
     loopExamples()
 
     //Collections intro
-    collectionsExamples()
+    collectionsOperators()
 
     //sets
     val set = hashSetOf(1, 4 ,45, 56)
@@ -66,9 +66,28 @@ fun rangesExamples() {
 
 }
 
-fun collectionsExamples() {
-    //arrayList
-    val myArrayList = arrayListOf(1, 3 ,4 , 6, 9, "smart")
+fun collectionsOperators() {
+    //array
+    val myArray= 1..10
+
+    //sum all the values in the list
+    //reduce
+    val listMultiply = myArray.reduce { x, y -> x * y }
+    println("Reduce multiply and print that list : $listMultiply")
+
+    //fold its like reduce but starts with an initial value
+    val listMultiply2 = myArray.fold(5) { x, y -> x * y }
+    println("fold multiply and print that list : $listMultiply2")
+
+    //check if any values are meeting a specific condition use `any` or even `all`
+    println("Evens : ${myArray.any{it % 2 == 0}}")
+    println("Evens : ${myArray.all{it % 2 == 0}}")
+
+    //.filter usage to get a list of items based on a condition
+    val big3 = myArray.filter { it > 3 }
+    big3.forEach { println(">3: $it") }
+
+
 }
 
 fun myArrayOperations() {

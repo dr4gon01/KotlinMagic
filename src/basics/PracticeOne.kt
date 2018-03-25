@@ -35,8 +35,6 @@ class StringOrNah(private val yourString : Any) {
         get() {
             return yourString is String
         }
-
-
 }
 
 
